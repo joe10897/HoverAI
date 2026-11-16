@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 260px;
+      padding: 14px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 13px;
+      color: #333;
+      margin: 0;
+    }
+    h3 {
+      margin: 0 0 12px 0;
+      font-size: 15px;
+      color: #1a73e8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .badge {
+      font-size: 11px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: #eee;
+      color: #666;
+    }
+    .badge.active {
+      background: #e6f4ea;
+      color: #137333;
+    }
+    .group {
+      margin-bottom: 12px;
+    }
+    label {
+      display: block;
+      margin-bottom: 4px;
+      font-weight: 500;
+      font-size: 12px;
+    }
+    input[type="text"] {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 6px 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+    #verifyBtn {
+      width: 100%;
+      padding: 7px;
+      background: #1a73e8;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 13px;
+      margin-top: 6px;
+    }
+    #verifyBtn:hover {
+      background: #1557b0;
+    }
+    .mode-switch {
+      display: flex;
+      gap: 4px;
+      background: #f1f3f4;
+      padding: 3px;
+      border-radius: 6px;
+    }
+    .mode-btn {
+      flex: 1;
+      padding: 6px 4px;
+      background: transparent;
+      color: #555;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 500;
+      transition: background 0.15s, color 0.15s;
+    }
+    .mode-btn:hover {
+      color: #1a73e8;
+    }
+    .mode-btn.active {
+      background: #ffffff;
+      color: #1a73e8;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+    }
+    .mode-desc {
+      margin-top: 4px;
+      font-size: 11px;
+      color: #666;
+    }
+    .slider-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    input[type="range"] {
+      flex: 1;
+    }
+    .val {
+      width: 36px;
+      text-align: right;
+      font-size: 12px;
+      color: #666;
+    }
+    #status {
+      margin-top: 8px;
+      font-size: 11px;
+      color: #d93025;
+      min-height: 16px;
+    }
+    .hint {
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px solid #eee;
+      font-size: 11px;
+      color: #777;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <h3>
+    <span>Hover AI 助手</span>
+    <span id="authBadge" class="badge">未啟用</span>
+  </h3>
+
+  <div class="group">
+    <label for="licenseKey">授權序號 (License Key)</label>
+    <input type="text" id="licenseKey" placeholder="請輸入 VIP-XXXX-XXXX">
+    <button id="verifyBtn">啟用並綁定此電腦</button>
+    <div id="status"></div>
+  </div>
+
+  <div class="group">
+    <label>Ctrl + X 預設模式</label>
+    <div class="mode-switch" role="group" aria-label="預設模式切換">
+      <button type="button" class="mode-btn active" data-mode="mc">MC 模式</button>
+      <button type="button" class="mode-btn" data-mode="solve">解題模式</button>
+    </div>
+    <div class="mode-desc" id="modeDesc">選擇題 / 是非題 / 填充題（極簡小框）</div>
+  </div>
+
+  <div class="group">
+    <label>顯示透明度：<span id="opacityVal">0.28</span></label>
+    <div class="slider-row">
+      <input type="range" id="opacity" min="0.10" max="0.80" step="0.02" value="0.28">
+    </div>
+  </div>
+
+  <div class="group">
+    <label>字體大小：<span id="fontSizeVal">9px</span></label>
+    <div class="slider-row">
+      <input type="range" id="fontSize" min="8" max="16" step="1" value="9">
+    </div>
+  </div>
+
+  <div class="hint">
+    • <b>Ctrl + X</b>：依上方預設模式解題<br>
+    • <b>Ctrl + Shift + X</b>：直接觸發解題模式（文字/程式）<br>
+    • <b>Esc</b> 或移至空白處再按快捷鍵：隱藏顯示框<br>
+    • 解題模式框支援捲動與點擊「複製」
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

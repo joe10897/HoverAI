@@ -8,6 +8,7 @@
     <img src="https://img.shields.io/badge/Backend-Cloudflare%20Workers-F38020?logo=cloudflare&logoColor=white" alt="Cloudflare Workers" />
     <img src="https://img.shields.io/badge/AI-Google%20Gemini%20API-8E75B2?logo=googlegemini&logoColor=white" alt="Gemini API" />
   </p>
+  <p><sub><strong>Copyright (c) 2026 Simon C.-Y. Wong. All rights reserved.</strong></sub></p>
 </div>
 
 <p align="center">
@@ -28,6 +29,7 @@
 - [系統架構](#-系統架構)
 - [安裝與打包指南](#-安裝與打包指南)
 - [專案結構](#-專案結構)
+- [版權聲明](#-版權聲明)
 
 ---
 
@@ -174,3 +176,11 @@ HoverAI/
 │   └── solve-mode-demo.png
 └── README.md
 ```
+
+---
+
+## 📄 版權聲明
+
+Copyright (c) 2026 Simon C.-Y. Wong. All rights reserved.
+
+未經著作權人書面許可，嚴禁擅自複製、修改、散佈或用於任何商業用途。

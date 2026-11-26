@@ -1,3 +1,4 @@
+// Copyright (c) 2026 Simon C.-Y. Wong. All rights reserved.
 // 【請替換為你的 Cloudflare Worker 網址】
 const API_URL = 'https://ai-reader-api.842679135jjj.workers.dev';
 

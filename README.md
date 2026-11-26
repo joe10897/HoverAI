@@ -8,6 +8,11 @@
     <img src="https://img.shields.io/badge/Backend-Cloudflare%20Workers-F38020?logo=cloudflare&logoColor=white" alt="Cloudflare Workers" />
     <img src="https://img.shields.io/badge/AI-Google%20Gemini%20API-8E75B2?logo=googlegemini&logoColor=white" alt="Gemini API" />
   </p>
+  <p>
+    <a href="https://chromewebstore.google.com/detail/bagehkpnffokdkeijgopaboedbolijmj?utm_source=item-share-cb">
+      <img src="https://img.shields.io/badge/Chrome%20Web%20Store-%E7%AB%8B%E5%8D%B3%E5%AE%89%E8%A3%9D-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="前往 Chrome 線上應用程式商店安裝" />
+    </a>
+  </p>
   <p><sub><strong>Copyright (c) 2026 Simon C.-Y. Wong. All rights reserved.</strong></sub></p>
 </div>
 
@@ -122,7 +127,11 @@ flowchart LR
 
 ## 🚀 安裝與打包指南
 
-### 1. 本機載入 Chrome 擴充功能
+### 1. 從 Chrome 線上應用程式商店安裝（推薦）
+
+👉 **[Hover AI Reader — Chrome Web Store 官方安裝頁面](https://chromewebstore.google.com/detail/bagehkpnffokdkeijgopaboedbolijmj?utm_source=item-share-cb)**
+
+### 2. 本機載入 Chrome 擴充功能
 
 1. Clone 或下載本專案至本機：
    ```bash
@@ -132,7 +141,7 @@ flowchart LR
 3. 在 Chrome 瀏覽器開啟 `chrome://extensions/`，打開右上角 **「開發人員模式」**。
 4. 點擊 **「載入未封裝項目」**，選擇 `HoverAI` 專案資料夾即可使用。
 
-### 2. Cloudflare Worker 後端環境設定
+### 3. Cloudflare Worker 後端環境設定
 
 若需自行部署後端 Worker，請在 Cloudflare Workers 後台設定以下資源與變數：
 
@@ -142,7 +151,7 @@ flowchart LR
 | **Secret / Variable** | `GEMINI_API_KEY` | Google AI Studio Gemini API 金鑰 |
 | **Secret / Variable** | `ADMIN_SECRET` | `/admin` 發卡管理後台的登入密碼 |
 
-### 3. 上架 Chrome Web Store 打包建議
+### 4. 上架 Chrome Web Store 打包建議
 
 上傳擴充功能套件 `.zip` 時，僅需包含以下執行必需檔案（請勿將 `docs/`、`.git` 或宣傳預覽圖打入套件）：
 
